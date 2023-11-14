@@ -20,7 +20,7 @@ const MirrorKeysCmp = ({ user, setUser }: Props) => {
   const { address } = useAccount()
   useEffect(() => { setUser({ address: address }) }, [address])
 
-  const {mirrorAccount} = useMirrorKeys();
+  const { mirrorAccount } = useMirrorKeys();
 
   const handleLogin = async () => {
     if (password) {
@@ -31,12 +31,13 @@ const MirrorKeysCmp = ({ user, setUser }: Props) => {
     }
   };
 
-  //useEffect(() => {console.log(loading)}, [loading])
-
   return (
     <>
       <h3>Mirror Keys</h3>
-      <input value={password} onChange={(e) => setPassword(e.target.value)} />
+      <div>
+        <label>Pass :</label>
+        <input value={password} onChange={(e) => setPassword(e.target.value)} />
+      </div>
       <button onClick={handleLogin}>Create your Mirror Wallet</button>
       {(loading && !user?.mirrorKeys) && <p>Keys pair is being generated ...</p>}
       {(!loading && !!user?.mirrorKeys) &&
@@ -44,7 +45,7 @@ const MirrorKeysCmp = ({ user, setUser }: Props) => {
           field[0] !== 'wallet' &&
           <div key={id} className='info'>
             {field[0] === 'controlAddress' ? <p>{field[0]} {field[1]}</p> :
-                                             <p>{field[0]} has been generated</p>
+              <p>{field[0]} has been generated</p>
             }
           </div>
         )

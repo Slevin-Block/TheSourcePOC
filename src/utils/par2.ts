@@ -1,4 +1,4 @@
-import ReedSolomon from '@ronomon/reed-solomon'
+/* import ReedSolomon from '@ronomon/reed-solomon'
 
 function splitFileWithReedSolomon(file, dataShards, parityShards) {
   // Lire le fichier
@@ -40,4 +40,4 @@ const parityShards = 2;
 const fileChunks = splitFileWithReedSolomon(file, dataShards, parityShards);
 
 // Afficher les morceaux encodés
-console.log(fileChunks);
+console.log(fileChunks); */
